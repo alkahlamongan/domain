@@ -16,7 +16,7 @@
    (di dalam Apps Script, google.script.run asli dipakai). */
 (function(){
   if(window.google&&google.script&&google.script.run)return;
-  var API_URL='https://script.google.com/macros/s/AKfycbzo7fXrWw-Pw5w3F6Tr-zpRwfWJSWoMTlwo0OCra35HdyM7xQtRjTty91OwpHhIJw43fw/exec'; // <-- tempel URL web app Apps Script (berakhiran /exec)
+  var API_URL='https://script.google.com/macros/s/AKfycbzo7fXrWw-Pw5w3F6Tr-zpRwfWJSWoMTlwo0OCra35HdyM7xQtRjTty91OwpHhIJw43fw/exec';
   function call(fn,args,ok,fail){
     fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({fn:fn,args:args})})
       .then(function(r){return r.json()})
